@@ -14,11 +14,6 @@ class DocumentTranslation implements TranslationInterface
     /** @use TranslationTrait<Document> */
     use TranslationTrait;
 
-    #[ORM\Id]
-    #[ORM\Column(type: Types::INTEGER)]
-    #[ORM\GeneratedValue]
-    private int $id;
-
     #[ORM\Column(type: Types::STRING, length: 245)]
     private string $contentTitle = '';
 

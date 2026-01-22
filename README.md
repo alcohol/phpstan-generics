@@ -3,65 +3,41 @@
 
 $ php vendor/bin/phpstan
 Note: Using configuration file /workdir/phpstan.dist.neon.
+
  11/11 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
 
- ------ -----------------------------------------------------------------------------------
-  Line   Entity/Document.php
- ------ -----------------------------------------------------------------------------------
-  20     Property Entity\Document::$id is never written, only read.
-         🪪  property.onlyRead
-         💡  See: https://phpstan.org/developing-extensions/always-read-written-properties
- ------ -----------------------------------------------------------------------------------
 
- ------ -----------------------------------------------------------------------------------
-  Line   Entity/DocumentTranslation.php
- ------ -----------------------------------------------------------------------------------
-  20     Property Entity\DocumentTranslation::$id is never written, only read.
-         🪪  property.onlyRead
-         💡  See: https://phpstan.org/developing-extensions/always-read-written-properties
- ------ -----------------------------------------------------------------------------------
+ [OK] No errors
 
-
- [ERROR] Found 2 errors
 
 # upgrade to latest
 $ composer require --dev phpstan/phpstan ^2
 
-...
+
 
 # with 2.1.36
 
 $ php vendor/bin/phpstan
 Note: Using configuration file /workdir/phpstan.dist.neon.
+
  11/11 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
 
  ------ ------------------------------------------------------------------------------------------
   Line   Entity/Document.php
  ------ ------------------------------------------------------------------------------------------
-  20     Property Entity\Document::$id is never written, only read.
-         🪪  property.onlyRead
-         💡  See: https://phpstan.org/developing-extensions/always-read-written-properties
-  44     Call to an undefined method Contract\Entity\TranslationInterface::setContentTitle().
+  34     Call to an undefined method Contract\Entity\TranslationInterface::setContentTitle().
          🪪  method.notFound
-  51     Call to an undefined method Contract\Entity\TranslationInterface::getContentTitle().
+  41     Call to an undefined method Contract\Entity\TranslationInterface::getContentTitle().
          🪪  method.notFound
-  56     Call to an undefined method Contract\Entity\TranslationInterface::setContent().
+  46     Call to an undefined method Contract\Entity\TranslationInterface::setContent().
          🪪  method.notFound
-  63     Call to an undefined method Contract\Entity\TranslationInterface::getContent().
+  53     Call to an undefined method Contract\Entity\TranslationInterface::getContent().
          🪪  method.notFound
-  68     Call to an undefined method Contract\Entity\TranslationInterface::getShortDescription().
+  58     Call to an undefined method Contract\Entity\TranslationInterface::getShortDescription().
          🪪  method.notFound
-  73     Call to an undefined method Contract\Entity\TranslationInterface::setShortDescription().
+  63     Call to an undefined method Contract\Entity\TranslationInterface::setShortDescription().
          🪪  method.notFound
  ------ ------------------------------------------------------------------------------------------
-
- ------ -----------------------------------------------------------------------------------
-  Line   Entity/DocumentTranslation.php
- ------ -----------------------------------------------------------------------------------
-  20     Property Entity\DocumentTranslation::$id is never written, only read.
-         🪪  property.onlyRead
-         💡  See: https://phpstan.org/developing-extensions/always-read-written-properties
- ------ -----------------------------------------------------------------------------------
 
  ------ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   Line   Model/Translatable/TranslatableMethodsTrait.php (in context of class Entity\Document)
@@ -126,6 +102,6 @@ Note: Using configuration file /workdir/phpstan.dist.neon.
  ------ ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
- [ERROR] Found 29 errors
+ [ERROR] Found 27 errors
 
 ```

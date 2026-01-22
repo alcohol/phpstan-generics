@@ -14,18 +14,8 @@ class Document implements TranslatableInterface
     /** @use TranslatableTrait<DocumentTranslation> */
     use TranslatableTrait;
 
-    #[ORM\Id]
-    #[ORM\Column(type: Types::SMALLINT)]
-    #[ORM\GeneratedValue]
-    private int $id;
-
     #[ORM\Column(type: Types::STRING, length: 245)]
     private string $title;
-
-    public function getId(): ?int
-    {
-        return $this->id ?? null;
-    }
 
     public function setTitle(string $title): self
     {
